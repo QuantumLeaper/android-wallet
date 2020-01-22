@@ -38,7 +38,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class ExchangeApiImpl implements ExchangeApi {
-    static final String CRYPTO_ID = "328";
+    static final String CRYPTO_ID = "3752";
 
     @NonNull
     private final OkHttpClient okHttpClient;
@@ -54,8 +54,7 @@ public class ExchangeApiImpl implements ExchangeApi {
     }
 
     public ExchangeApiImpl(@NonNull final OkHttpClient okHttpClient) {
-        //this(okHttpClient, HttpUrl.parse("https://api.coinmarketcap.com/v2/ticker/"));
-        this(okHttpClient, HttpUrl.parse("https://api.coingecko.com/api/v3/coins/uplexa/tickers"));
+        this(okHttpClient, HttpUrl.parse("https://api.coinmarketcap.com/v2/ticker/"));
 
     }
 
@@ -89,8 +88,8 @@ public class ExchangeApiImpl implements ExchangeApi {
         final boolean swapAssets = inverse;
 
         final HttpUrl url = baseUrl.newBuilder()
-                //.addEncodedPathSegments(CRYPTO_ID + "/")
-                //.addQueryParameter("convert", fiat)
+                .addEncodedPathSegments(CRYPTO_ID + "/")
+                .addQueryParameter("convert", fiat)
                 .build();
 
         final Request httpRequest = createHttpRequest(url);

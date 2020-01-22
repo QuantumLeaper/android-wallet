@@ -38,8 +38,7 @@ class ExchangeRateImpl implements ExchangeRate {
 
     @Override
     public String getServiceName() {
-        //return "coinmarketcap.com";
-        return "coingecko.com";
+        return "coinmarketcap.com";
     }
 
     @Override
