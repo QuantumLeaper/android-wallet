@@ -128,3 +128,7 @@ cd <path-to-upxwallet>/external-libs
 find . -name "*.a" -or -name "*.h" -type f -delete
 ./collect.sh
 ```
+
+
+# Problems with ARM32 Architecture
+To be able to run this application on ARM32 architecture, ensure to set the nonce bit to 32 from 35
